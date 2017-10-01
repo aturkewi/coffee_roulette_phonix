@@ -1,12 +1,12 @@
-defmodule CoffeeRoulettePhonix.Web do
+defmodule CoffeeRoulettePhx.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use CoffeeRoulettePhonix.Web, :controller
-      use CoffeeRoulettePhonix.Web, :view
+      use CoffeeRoulettePhx.Web, :controller
+      use CoffeeRoulettePhx.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -30,12 +30,12 @@ defmodule CoffeeRoulettePhonix.Web do
     quote do
       use Phoenix.Controller
 
-      alias CoffeeRoulettePhonix.Repo
+      alias CoffeeRoulettePhx.Repo
       import Ecto
       import Ecto.Query
 
-      import CoffeeRoulettePhonix.Router.Helpers
-      import CoffeeRoulettePhonix.Gettext
+      import CoffeeRoulettePhx.Router.Helpers
+      import CoffeeRoulettePhx.Gettext
     end
   end
 
@@ -49,9 +49,9 @@ defmodule CoffeeRoulettePhonix.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import CoffeeRoulettePhonix.Router.Helpers
-      import CoffeeRoulettePhonix.ErrorHelpers
-      import CoffeeRoulettePhonix.Gettext
+      import CoffeeRoulettePhx.Router.Helpers
+      import CoffeeRoulettePhx.ErrorHelpers
+      import CoffeeRoulettePhx.Gettext
     end
   end
 
@@ -65,10 +65,10 @@ defmodule CoffeeRoulettePhonix.Web do
     quote do
       use Phoenix.Channel
 
-      alias CoffeeRoulettePhonix.Repo
+      alias CoffeeRoulettePhx.Repo
       import Ecto
       import Ecto.Query
-      import CoffeeRoulettePhonix.Gettext
+      import CoffeeRoulettePhx.Gettext
     end
   end
 

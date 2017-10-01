@@ -6,15 +6,15 @@
 use Mix.Config
 
 # General application configuration
-config :coffee_roulette_phonix,
-  ecto_repos: [CoffeeRoulettePhonix.Repo]
+config :coffee_roulette_phx,
+  ecto_repos: [CoffeeRoulettePhx.Repo]
 
 # Configures the endpoint
-config :coffee_roulette_phonix, CoffeeRoulettePhonix.Endpoint,
+config :coffee_roulette_phx, CoffeeRoulettePhx.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "++w2lWujT0HuwYy1v9YpKPzksGS0MuH/aNdlQw3qu35vEoVzRtcjPiCyjyKmyV8m",
-  render_errors: [view: CoffeeRoulettePhonix.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: CoffeeRoulettePhonix.PubSub,
+  render_errors: [view: CoffeeRoulettePhx.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: CoffeeRoulettePhx.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

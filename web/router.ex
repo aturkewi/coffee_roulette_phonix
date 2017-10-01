@@ -1,5 +1,5 @@
-defmodule CoffeeRoulettePhonix.Router do
-  use CoffeeRoulettePhonix.Web, :router
+defmodule CoffeeRoulettePhx.Router do
+  use CoffeeRoulettePhx.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,18 @@ defmodule CoffeeRoulettePhonix.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", CoffeeRoulettePhonix do
+  scope "/", CoffeeRoulettePhx do
     pipe_through :browser # Use the default browser stack
 
+    get "/users/:id", UserController, :show
+    get "/users/new", UserController, :new
+    post "/users", UserController, :create
+    
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", CoffeeRoulettePhonix do
+  # scope "/api", CoffeeRoulettePhx do
   #   pipe_through :api
   # end
 end

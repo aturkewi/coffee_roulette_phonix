@@ -1,5 +1,5 @@
-defmodule CoffeeRoulettePhonix.PageControllerTest do
-  use CoffeeRoulettePhonix.ConnCase
+defmodule CoffeeRoulettePhx.PageControllerTest do
+  use CoffeeRoulettePhx.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

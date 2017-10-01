@@ -1,4 +1,4 @@
-# CoffeeRoulettePhonix
+# CoffeeRoulettePhx
 
 To start your Phoenix app:
 

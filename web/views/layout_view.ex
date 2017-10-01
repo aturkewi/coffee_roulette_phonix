@@ -1,3 +1,3 @@
-defmodule CoffeeRoulettePhonix.LayoutView do
-  use CoffeeRoulettePhonix.Web, :view
+defmodule CoffeeRoulettePhx.LayoutView do
+  use CoffeeRoulettePhx.Web, :view
 end

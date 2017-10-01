@@ -1,14 +1,14 @@
-defmodule CoffeeRoulettePhonix.Endpoint do
-  use Phoenix.Endpoint, otp_app: :coffee_roulette_phonix
+defmodule CoffeeRoulettePhx.Endpoint do
+  use Phoenix.Endpoint, otp_app: :coffee_roulette_phx
 
-  socket "/socket", CoffeeRoulettePhonix.UserSocket
+  socket "/socket", CoffeeRoulettePhx.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :coffee_roulette_phonix, gzip: false,
+    at: "/", from: :coffee_roulette_phx, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -35,8 +35,8 @@ defmodule CoffeeRoulettePhonix.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_coffee_roulette_phonix_key",
+    key: "_coffee_roulette_phx_key",
     signing_salt: "Urz8OFRa"
 
-  plug CoffeeRoulettePhonix.Router
+  plug CoffeeRoulettePhx.Router
 end

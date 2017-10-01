@@ -6,7 +6,7 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
-config :coffee_roulette_phonix, CoffeeRoulettePhonix.Endpoint,
+config :coffee_roulette_phx, CoffeeRoulettePhx.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -16,7 +16,7 @@ config :coffee_roulette_phonix, CoffeeRoulettePhonix.Endpoint,
 
 
 # Watch static and templates for browser reloading.
-config :coffee_roulette_phonix, CoffeeRoulettePhonix.Endpoint,
+config :coffee_roulette_phx, CoffeeRoulettePhx.Endpoint,
   live_reload: [
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
@@ -34,10 +34,10 @@ config :logger, :console, format: "[$level] $message\n"
 config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
-config :coffee_roulette_phonix, CoffeeRoulettePhonix.Repo,
+config :coffee_roulette_phx, CoffeeRoulettePhx.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "coffee_roulette_phonix_dev",
+  database: "coffee_roulette_phx_dev",
   hostname: "localhost",
   pool_size: 10

@@ -1,5 +1,5 @@
-defmodule CoffeeRoulettePhonix.ErrorView do
-  use CoffeeRoulettePhonix.Web, :view
+defmodule CoffeeRoulettePhx.ErrorView do
+  use CoffeeRoulettePhx.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

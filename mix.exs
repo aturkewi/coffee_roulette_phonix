@@ -1,8 +1,8 @@
-defmodule CoffeeRoulettePhonix.Mixfile do
+defmodule CoffeeRoulettePhx.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :coffee_roulette_phonix,
+    [app: :coffee_roulette_phx,
      version: "0.0.1",
      elixir: "~> 1.2",
      elixirc_paths: elixirc_paths(Mix.env),
@@ -17,7 +17,7 @@ defmodule CoffeeRoulettePhonix.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {CoffeeRoulettePhonix, []},
+    [mod: {CoffeeRoulettePhx, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex]]
   end

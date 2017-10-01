@@ -1,4 +1,4 @@
-defmodule CoffeeRoulettePhonix do
+defmodule CoffeeRoulettePhx do
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
@@ -9,23 +9,23 @@ defmodule CoffeeRoulettePhonix do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      supervisor(CoffeeRoulettePhonix.Repo, []),
+      supervisor(CoffeeRoulettePhx.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(CoffeeRoulettePhonix.Endpoint, []),
-      # Start your own worker by calling: CoffeeRoulettePhonix.Worker.start_link(arg1, arg2, arg3)
-      # worker(CoffeeRoulettePhonix.Worker, [arg1, arg2, arg3]),
+      supervisor(CoffeeRoulettePhx.Endpoint, []),
+      # Start your own worker by calling: CoffeeRoulettePhx.Worker.start_link(arg1, arg2, arg3)
+      # worker(CoffeeRoulettePhx.Worker, [arg1, arg2, arg3]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: CoffeeRoulettePhonix.Supervisor]
+    opts = [strategy: :one_for_one, name: CoffeeRoulettePhx.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    CoffeeRoulettePhonix.Endpoint.config_change(changed, removed)
+    CoffeeRoulettePhx.Endpoint.config_change(changed, removed)
     :ok
   end
 end

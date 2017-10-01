@@ -1,3 +1,3 @@
-defmodule CoffeeRoulettePhonix.PageViewTest do
-  use CoffeeRoulettePhonix.ConnCase, async: true
+defmodule CoffeeRoulettePhx.PageViewTest do
+  use CoffeeRoulettePhx.ConnCase, async: true
 end

@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :coffee_roulette_phonix, CoffeeRoulettePhonix.Endpoint,
+config :coffee_roulette_phx, CoffeeRoulettePhx.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -10,10 +10,10 @@ config :coffee_roulette_phonix, CoffeeRoulettePhonix.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :coffee_roulette_phonix, CoffeeRoulettePhonix.Repo,
+config :coffee_roulette_phx, CoffeeRoulettePhx.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "coffee_roulette_phonix_test",
+  database: "coffee_roulette_phx_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

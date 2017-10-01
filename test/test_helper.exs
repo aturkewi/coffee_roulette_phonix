@@ -1,4 +1,4 @@
 ExUnit.start
 
-Ecto.Adapters.SQL.Sandbox.mode(CoffeeRoulettePhonix.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(CoffeeRoulettePhx.Repo, :manual)
 

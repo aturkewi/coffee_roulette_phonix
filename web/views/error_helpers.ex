@@ -1,4 +1,4 @@
-defmodule CoffeeRoulettePhonix.ErrorHelpers do
+defmodule CoffeeRoulettePhx.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -32,9 +32,9 @@ defmodule CoffeeRoulettePhonix.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(CoffeeRoulettePhonix.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(CoffeeRoulettePhx.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(CoffeeRoulettePhonix.Gettext, "errors", msg, opts)
+      Gettext.dgettext(CoffeeRoulettePhx.Gettext, "errors", msg, opts)
     end
   end
 end

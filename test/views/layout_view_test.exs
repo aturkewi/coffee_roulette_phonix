@@ -1,3 +1,3 @@
-defmodule CoffeeRoulettePhonix.LayoutViewTest do
-  use CoffeeRoulettePhonix.ConnCase, async: true
+defmodule CoffeeRoulettePhx.LayoutViewTest do
+  use CoffeeRoulettePhx.ConnCase, async: true
 end

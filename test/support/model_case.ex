@@ -1,4 +1,4 @@
-defmodule CoffeeRoulettePhonix.ModelCase do
+defmodule CoffeeRoulettePhx.ModelCase do
   @moduledoc """
   This module defines the test case to be used by
   model tests.
@@ -16,20 +16,20 @@ defmodule CoffeeRoulettePhonix.ModelCase do
 
   using do
     quote do
-      alias CoffeeRoulettePhonix.Repo
+      alias CoffeeRoulettePhx.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import CoffeeRoulettePhonix.ModelCase
+      import CoffeeRoulettePhx.ModelCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(CoffeeRoulettePhonix.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(CoffeeRoulettePhx.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(CoffeeRoulettePhonix.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(CoffeeRoulettePhx.Repo, {:shared, self()})
     end
 
     :ok
@@ -59,7 +59,7 @@ defmodule CoffeeRoulettePhonix.ModelCase do
   """
   def errors_on(struct, data) do
     struct.__struct__.changeset(struct, data)
-    |> Ecto.Changeset.traverse_errors(&CoffeeRoulettePhonix.ErrorHelpers.translate_error/1)
+    |> Ecto.Changeset.traverse_errors(&CoffeeRoulettePhx.ErrorHelpers.translate_error/1)
     |> Enum.flat_map(fn {key, errors} -> for msg <- errors, do: {key, msg} end)
   end
 end

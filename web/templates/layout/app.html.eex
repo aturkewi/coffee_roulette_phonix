@@ -16,7 +16,15 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <li>
+              <%= if @current_user do %>
+                <li>Hello <%= @current_user.username %></li>
+                <li><%= link("Logout", to: "/") %></li>
+              <%= else %>
+                <li><%= link("Login", to: "/") %></li>
+                <li><%= link("Create Account", to: "/users/new") %></li>
+              <% end %>
+            </li>
           </ul>
         </nav>
         <span class="logo"></span>

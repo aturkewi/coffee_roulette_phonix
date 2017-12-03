@@ -25,6 +25,8 @@ defmodule CoffeeRoulettePhx.User do
     |> changeset(params)
     |> cast(params, ~w(password), [])
     |> validate_length(:password, min: 6, max: 100)
+    |> unique_constraint(:email, message: "There is already an account with this email. ")
+    |> unique_constraint(:username, message: "There is already an account with this username. ")
     |> put_pass_hash()
   end
 

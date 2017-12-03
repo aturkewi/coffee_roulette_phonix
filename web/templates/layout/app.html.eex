@@ -19,10 +19,10 @@
             <li>
               <%= if @current_user do %>
                 <li>Hello <%= @current_user.username %></li>
-                <li><%= link("Logout", to: "/") %></li>
+                <li><%= link("Logout", to: session_path(@conn, :delete, @current_user), method: "delete") %></li>
               <%= else %>
-                <li><%= link("Login", to: "/") %></li>
-                <li><%= link("Create Account", to: "/users/new") %></li>
+                <li><%= link("Login", to: session_path(@conn, :new)) %></li>
+                <li><%= link("Create Account", to: user_path(@conn, :new)) %></li>
               <% end %>
             </li>
           </ul>

@@ -22,7 +22,10 @@ defmodule CoffeeRoulettePhx.UserController do
   end
 
   def show(conn, %{"id" => id}) do
-    user = Repo.get(CoffeeRoulettePhx.User, id)
+    user = User
+      |> preload([:companies])
+      |> Repo.get(id)
+
     render conn, "show.html", user: user
   end
 

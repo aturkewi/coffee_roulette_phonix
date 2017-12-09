@@ -20,6 +20,7 @@ defmodule CoffeeRoulettePhx.Router do
     get "/", PageController, :index
 
     resources "/users", UserController, only: [:new, :create, :show]
+    resources "/companies", CompanyController, only: [:new, :create, :show]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
 

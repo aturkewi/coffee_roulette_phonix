@@ -1,2 +1,12 @@
 <h1>Hello <%= @user.first_name %></h1>
 <h2>This is your profile page</h2>
+
+<h3>Your companies</h3>
+<%= link("Create new copmany", to: company_path(@conn, :new)) %>
+<ul>
+  <%= for company <- @user.companies do %>
+    <li>
+      <%= link(company.name, to: "/") %>
+    </li>
+  <% end %>
+</ul>

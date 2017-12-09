@@ -11,6 +11,8 @@ defmodule CoffeeRoulettePhx.User do
     field :password, :string, virtual: true
     field :password_hash, :string
 
+    has_many :companies, CoffeeRoulettePhx.Company
+
     timestamps()
   end
 

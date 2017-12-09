@@ -6,7 +6,7 @@
 <ul>
   <%= for company <- @user.companies do %>
     <li>
-      <%= link(company.name, to: "/") %>
+      <%= link(company.name, to: company_path(@conn, :show)) %>
     </li>
   <% end %>
 </ul>

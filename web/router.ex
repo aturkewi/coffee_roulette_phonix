@@ -21,6 +21,7 @@ defmodule CoffeeRoulettePhx.Router do
 
     resources "/users", UserController, only: [:new, :create, :show]
     resources "/companies", CompanyController, only: [:new, :create, :show]
+    resources "/employees", EmployeeController, only: [:create]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
 

@@ -7,6 +7,7 @@ defmodule CoffeeRoulettePhx.Company do
     field :name, :string
 
     belongs_to :user, CoffeeRoulettePhx.User
+    has_many :employees, CoffeeRoulettePhx.Employee
     timestamps()
   end
 

@@ -2,10 +2,10 @@ defmodule CoffeeRoulettePhx.Employee do
   use CoffeeRoulettePhx.Web, :model
 
   schema "employees" do
-    field :company_id, :integer
     field :email, :string
     field :name, :string
 
+    belongs_to :company, CoffeeRoulettePhx.Company
     timestamps()
   end
 

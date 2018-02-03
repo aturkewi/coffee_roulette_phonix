@@ -3,13 +3,20 @@ defmodule CoffeeRoulettePhx.CompanyController do
   plug :authenticate when action in [:show]
   alias CoffeeRoulettePhx.Company
 
-  def new(conn, _params) do
-    changeset = Company.changeset(%Company{})
+  def new(conn, _params, user) do
+    changeset =
+      user
+      |> build_assoc(:companies)
+      |> Company.changeset()
+
     render conn, "new.html", changeset: changeset
   end
 
-  def create(conn, %{"company" => company_params}) do
-    changeset = Company.changeset(%Company{}, company_params)
+  def create(conn, %{"company" => company_params}, user) do
+    changeset =
+      user
+        |> build_assoc(:companies)
+        |> Company.changeset(company_params)
     case Repo.insert(changeset) do
       {:ok, company} ->
         conn
@@ -20,11 +27,15 @@ defmodule CoffeeRoulettePhx.CompanyController do
     end
   end
 
-  def show(conn, %{"id" => id}) do
+  def show(conn, %{"id" => id}, user) do
     company = Company
       |> Repo.get(id)
 
     render conn, "show.html", company: company
+  end
+
+  def action(conn, _) do
+    apply(__MODULE__, action_name(conn), [conn, conn.params, conn.assigns.current_user])
   end
 
   defp authenticate(conn, _opts) do

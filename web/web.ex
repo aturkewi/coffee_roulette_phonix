@@ -34,6 +34,8 @@ defmodule CoffeeRoulettePhx.Web do
       import Ecto
       import Ecto.Query
 
+      alias CoffeeRoulettePhx.Endpoint
+
       import CoffeeRoulettePhx.Router.Helpers
       import CoffeeRoulettePhx.Gettext
     end

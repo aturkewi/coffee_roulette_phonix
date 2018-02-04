@@ -6,10 +6,10 @@ defmodule CoffeeRoulettePhx.EmployeeController do
     changeset = Employee.changeset(%Employee{}, employee_params)
 
     case Repo.insert(changeset) do
-      {:ok, company} ->
+      {:ok, employee} ->
         conn
-        |> put_flash(:info, "#{company.name} created!")
-        |> redirect(to: company_path(conn, :show, company))
+        |> put_flash(:info, "#{employee.name} added!")
+        |> redirect(to: company_path(conn, :show, employee.company_id))
       {:error, changeset} ->
         conn
           |> put_flash(:erro, "Could not add user")

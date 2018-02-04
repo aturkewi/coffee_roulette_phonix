@@ -3,6 +3,7 @@ defmodule CoffeeRoulettePhx.CompanyController do
   plug :authenticate when action in [:show]
   alias CoffeeRoulettePhx.Company
   alias CoffeeRoulettePhx.Employee
+  alias CoffeeRoulettePhx.Department
 
   def new(conn, _params, user) do
     changeset =
@@ -30,13 +31,13 @@ defmodule CoffeeRoulettePhx.CompanyController do
 
   def show(conn, %{"id" => id}, user) do
     company = Company
-      |> preload([:employees])
+      |> preload([:departments])
       |> Repo.get(id)
 
     changeset =
       company
-        |> build_assoc(:employees)
-        |> Employee.changeset()
+        |> build_assoc(:departments)
+        |> Department.changeset()
 
     render conn, "show.html", company: company, changeset: changeset
   end

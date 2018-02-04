@@ -2,26 +2,22 @@
 
 <h2>Employees</h2>
 <div>
-  <h3>Add Employee</h3>
-  <%= form_for @changeset, employee_path(@conn, :create), fn f -> %>
+  <h3>Add Department</h3>
+  <%= form_for @changeset, department_path(@conn, :create), fn f -> %>
     <%= hidden_input f, :company_id %>
     <div class="form-group">
       <%= text_input f, :name, placeholder: "name", class: "form-control" %>
       <%= error_tag f, :name %>
     </div>
-    <div class="form-group">
-      <%= text_input f, :email, placeholder: "email", class: "form-control" %>
-      <%= error_tag f, :email %>
-    </div>
-    <%= submit "Add Employee", class: "btn btn-primary" %>
+    <%= submit "Add Department", class: "btn btn-primary" %>
   <% end %>
 </div>
 <div>
-  <h3>Employees</h3>
+  <h3>Departments</h3>
   <ul>
-    <%= for employee <- @company.employees do %>
+    <%= for department <- @company.departments do %>
       <li>
-        <%= employee.name %> | <%= employee.email %>
+        <%= department.name %>
       </li>
     <% end %>
   </ul>

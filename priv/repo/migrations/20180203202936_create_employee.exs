@@ -3,7 +3,7 @@ defmodule CoffeeRoulettePhx.Repo.Migrations.CreateEmployee do
 
   def change do
     create table(:employees) do
-      add :company_id, :integer
+      add :department_id, :integer
       add :email, :string
       add :name, :string
 

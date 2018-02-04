@@ -5,7 +5,7 @@ defmodule CoffeeRoulettePhx.Employee do
     field :email, :string
     field :name, :string
 
-    belongs_to :company, CoffeeRoulettePhx.Company
+    belongs_to :department, CoffeeRoulettePhx.Department
     timestamps()
   end
 
